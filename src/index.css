@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animation Keyframes */
+@keyframes float {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 5px rgba(139, 92, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(139, 92, 246, 0.5);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation Classes
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+*/
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+/* Cloud Background */
+.cloud-bg {
+  position: relative;
+  background-color: #0b0c10;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+  overflow: hidden;
+}
+
+/* Particles Container */
+.particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Cloud Particle */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(20px);
+  z-index: 0;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(11, 12, 16, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* File Card Hover Effects */
+.file-card {
+  transition: all 0.3s ease;
+}
+
+.file-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.2);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-top-color: #8b5cf6;
+  animation: spin-slow 1s linear infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(11, 12, 16, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #8b5cf6, #3b82f6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #a78bfa, #60a5fa);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  body {
+    @apply bg-[#0b0c10];
+  }
+}
+
+@layer components {
+  .neon-glow-purple {
+    box-shadow: 0 0 15px 2px rgba(155, 92, 255, 0.6);
+  }
+  
+  .neon-glow-blue {
+    box-shadow: 0 0 15px 2px rgba(0, 255, 255, 0.6);
+  }
+  
+  .neon-glow-yellow {
+    box-shadow: 0 0 15px 2px rgba(212, 175, 55, 0.6);
+  }
+  
+  .neon-text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-cyan-400;
+  }
+  
+  .glassmorphism {
+    @apply backdrop-blur-md bg-black bg-opacity-30 border border-gray-800;
+  }
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulseGlow 2s infinite;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulseGlow {
+    0% {
+      box-shadow: 0 0 5px 0px rgba(155, 92, 255, 0.6);
+    }
+    50% {
+      box-shadow: 0 0 20px 5px rgba(155, 92, 255, 0.8);
+    }
+    100% {
+      box-shadow: 0 0 5px 0px rgba(155, 92, 255, 0.6);
+    }
+  }
+}
+
+
